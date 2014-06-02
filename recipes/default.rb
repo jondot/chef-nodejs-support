@@ -1,6 +1,6 @@
 include_recipe "nodejs::npm"
 
-execute "npm install forever --global" do
+execute "npm install forever@#{node['nodejs-support']['forever_version']} --global" do
   not_if 'which forever'
 end
 
